@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 52
+  controlID: 54
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 53
+  controlID: 55
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 54
+  controlID: 56
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55
+  controlID: 57
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -217,8 +217,8 @@ MonoBehaviour:
     y: 0
     width: 383.2
     height: 502.4
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -299,8 +299,8 @@ MonoBehaviour:
     y: 0
     width: 276
     height: 722.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -444,23 +444,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 92910000
-      m_LastClickedID: 37266
-      m_ExpandedIDs: ca97ffffc8daffff12fbffff1a800000c2800000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 9e80ffffe680fffffa8cffff148dffff5295ffff9a95ffffcaa1ffffe4a1ffff82faffff647d0000487f0000b87f0000fc7f00003080000048800000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Player
+        m_OriginalName: Player
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 32402
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -493,7 +493,7 @@ MonoBehaviour:
     x: 383.2
     y: 73.6
     width: 874.8
-    height: 456.6
+    height: 481.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1094,9 +1094,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.31118903, y: 4.971409, z: 3.660789}
+    m_Target: {x: -6.4067907, y: 1.2989398, z: 14.012622}
     speed: 2
-    m_Value: {x: 0.31118903, y: 4.971409, z: 3.660789}
+    m_Value: {x: -6.4067907, y: 1.2989398, z: 14.012622}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1142,17 +1142,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0039861603, y: -0.97826153, z: 0.206667, w: -0.018784795}
+    m_Target: {x: 0.38617736, y: 0.3405889, z: -0.15604088, w: 0.8429339}
     speed: 2
-    m_Value: {x: -0.00398601, y: -0.9782246, z: 0.2066592, w: -0.018784085}
+    m_Value: {x: 0.3861735, y: 0.3405855, z: -0.15603931, w: 0.8429254}
   m_Size:
-    m_Target: 17.941555
+    m_Target: 60.71974
     speed: 2
-    m_Value: 17.941555
+    m_Value: 60.71974
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1.2758623
     m_SpeedNormalized: 0.63775
@@ -1164,7 +1164,7 @@ MonoBehaviour:
     m_FieldOfViewHorizontalOrVertical: 60
     m_NearClip: 0.03
     m_FarClip: 10000
-    m_DynamicClip: 1
+    m_DynamicClip: 0
     m_OcclusionCulling: 0
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
@@ -1262,9 +1262,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: c69771c8c6e57ea4aa5da5286afc344c, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 5b5f2d480b802234ab9f111271f612c0, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -5722767144360188150, guid: c69771c8c6e57ea4aa5da5286afc344c, type: 2}
+  - m_Target: {fileID: 8934381326113782096, guid: 5b5f2d480b802234ab9f111271f612c0, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1322,7 +1322,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Enemy/AIData
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1330,16 +1330,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Enemy/AIData
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\takes\SlaveChase Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 222.20001}
-    m_SelectedIDs: 548a0000
-    m_LastClickedID: 35412
-    m_ExpandedIDs: 00000000ba870000468a00004a8a0000548a00008c8b000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 60.600006}
+    m_SelectedIDs: beb10000
+    m_LastClickedID: 45502
+    m_ExpandedIDs: 000000008c8900008e8a0000b6b2000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1367,7 +1367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba870000
+    m_ExpandedIDs: 000000008c890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1498,7 +1498,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 486
+  m_LastVerticalScrollValue: 648
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

@@ -14,47 +14,47 @@ public class charactor : MonoBehaviour
     private const int Reypier = 2;
     private const int Apple = 3;
     // Start is called before the first frame update
-    public Transform Camera;//Œü‚¢‚Ä‚¢‚éŒü‚«‚ğæ“¾
+    public Transform Camera;//ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
     private Rigidbody rb;
     SwordCollision swordCollision;
     //EnemyAgentAttack enemyAgent;
 
-    //ƒvƒŒƒCƒ„[‚Ìƒpƒ‰ƒ[ƒ^
+    //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ìƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^
     public int HP = 100;
     public float SP = 100;
     public bool[] PlayerItem = new bool[4];
     public int NowHave = 0;
     public GameObject[] Item = new GameObject[3];
 
-    //y²•ûŒü‚ÉŠÖ‚·‚é‚à‚Ì
+    //yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public float UpDownSpeed = 0;
-    private int Gravity = -20;//d—Í‰Á‘¬“x
+    private int Gravity = -20;//ï¿½dï¿½Í‰ï¿½ï¿½ï¿½ï¿½x
 
-    //SP‚ÉŠÖ‚·‚é‚à‚Ì
+    //SPï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     const float RunDe = 20.0f; //SP decrease
     const float SPIn = 15.0f; //SP Increase
 
 
-    //ƒvƒŒƒCƒ„[‚Ì‘¬‚³‚ÉŠÖ‚·‚é‚à‚Ì
-    private int charactorSpeed;//•à‚­‘¬‚³
+    //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì‘ï¿½ï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private int charactorSpeed;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     const int normalCharaSpeed = 5;
     const int DashCharSpeed = 15;
 
 
-    //Šî–{“I‚Èƒtƒ‰ƒO
+    //ï¿½ï¿½{ï¿½Iï¿½Èƒtï¿½ï¿½ï¿½O
     private bool MoveFlag;
     private bool RunFlag;
     private bool SPEnableFlag = false;
     private float SPHealTime = 0;
 
     private bool LeftMouseFlag = false;
-   
+
     private bool AttackFlag = false;
     //private const float AttackTime = 1.0f;
     //private float AttackTimePro = 0;
 
 
-    //‰ñ”ğ‚ÉŠÖ‚·‚é‚à‚Ì
+    //ï¿½ï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private bool RightStepFlag = false;
     private bool LeftStepFlag = false;
     private bool BackStepFlag = false;
@@ -63,7 +63,7 @@ public class charactor : MonoBehaviour
     private const int StepSpeed = 5;
     private const int StepDe = 15;
 
-    //UŒ‚‚ÉŠÖ‚·‚é‚à‚Ì
+    //ï¿½Uï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public bool ActionFlag = false;
     public bool StanFlag = false;
     public float StanTimer;
@@ -79,7 +79,7 @@ public class charactor : MonoBehaviour
 
     void Start()
     {
-         rb = this.GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody>();
         PlayerAnimation = this.GetComponent<Animator>();
         //swordCollision = GameObject.Find("SwordCollision").GetComponent<SwordCollision>();
         attackSctipt = this.GetComponent<Attack>();
@@ -89,11 +89,11 @@ public class charactor : MonoBehaviour
         {
             Item[i].SetActive(false);
         }
-        PlayerPos[0] =new Vector3(-86, 5, -83);
+        PlayerPos[0] = new Vector3(-86, 5, -83);
         PlayerPos[1] = new Vector3(88, 5, -83);
         PlayerPos[2] = new Vector3(88, 5, 95);
         PlayerPos[3] = new Vector3(-86, 5, 95);
-        this.transform.position = PlayerPos[Random.Range(0, PlayerPos.Length)];
+        // this.transform.position = PlayerPos[Random.Range(0, PlayerPos.Length)];
     }
 
     // Update is called once per frame
@@ -114,7 +114,7 @@ public class charactor : MonoBehaviour
                 PlayerAnimation.SetBool("StanFlag", false);
             }
         }
-        if(HP <= 0)
+        if (HP <= 0)
         {
             DeadFlag = true;
             PlayerAnimation.SetBool("Dead", true);
@@ -131,7 +131,7 @@ public class charactor : MonoBehaviour
     void Move()
     {
         Vector3 PlayerVel = Vector3.zero;
-         MoveFlag = false;
+        MoveFlag = false;
 
 
         if (Input.GetKey(KeyCode.W))
@@ -153,10 +153,10 @@ public class charactor : MonoBehaviour
 
         if (PlayerVel != Vector3.zero)
         {
-            if(attackSctipt.AttackFlag == false)
+            if (attackSctipt.AttackFlag == false)
             {
                 MoveFlag = true;
-            } 
+            }
         }
         //transform.Translate(MoveCharactor);
         //characterController.SimpleMove(MoveCharactor);
@@ -166,16 +166,17 @@ public class charactor : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                if(flyFlag == false)
+                if (flyFlag == false)
                 {
                     if (SPEnableFlag == true)
                     {
                         RunFlag = true;
                     }
-                    else { 
+                    else
+                    {
                         RunFlag = false;
                     }
-                }  
+                }
             }
             else
             {
@@ -199,12 +200,12 @@ public class charactor : MonoBehaviour
             charactorSpeed = normalCharaSpeed;
         }
 
-        if(MoveFlag && !RunFlag)
+        if (MoveFlag && !RunFlag)
         {
             PlayerAnimation.SetBool("run", false);
             PlayerAnimation.SetBool("walk", true);
         }
-        if(MoveFlag && RunFlag)
+        if (MoveFlag && RunFlag)
         {
 
             PlayerAnimation.SetBool("run", true);
@@ -218,7 +219,7 @@ public class charactor : MonoBehaviour
 
 
 
-        if (ActionFlag && !flyFlag)//ƒWƒƒƒ“ƒvˆÈŠO‚ÅƒAƒNƒVƒ‡ƒ“‚ğ‚µ‚½‚ç‘«‚ğ~‚ß‚é
+        if (ActionFlag && !flyFlag)//ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ÈŠOï¿½ÅƒAï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç‘«ï¿½ï¿½ï¿½~ï¿½ß‚ï¿½
         {
             MoveFlag = false;
             RunFlag = false;
@@ -229,10 +230,10 @@ public class charactor : MonoBehaviour
 
         if (MoveFlag)
         {
-            PlayerVel = new Vector3 (PlayerVel.x, 0, PlayerVel.z);
+            PlayerVel = new Vector3(PlayerVel.x, 0, PlayerVel.z);
             PlayerVel = PlayerVel.normalized;
             rb.velocity = PlayerVel * charactorSpeed + transform.up * UpDownSpeed;
-            transform.rotation =  Quaternion.LookRotation(PlayerVel);
+            transform.rotation = Quaternion.LookRotation(PlayerVel);
         }
         else
         {
@@ -244,21 +245,21 @@ public class charactor : MonoBehaviour
     private static float JumfirstSpeed = 6;
     void Jump()
     {
-        
-        if(Input.GetKey(KeyCode.Space) == true)
+
+        if (Input.GetKey(KeyCode.Space) == true)
         {
-            if(ActionFlag == false)
+            if (ActionFlag == false)
             {
                 JumpFlag = true;
-                UpDownSpeed = JumfirstSpeed;//‰‘¬“x‚Ì’Ç‰Á
-                this.transform.Translate(0,0.1f,0);//FlyFlag‚ªˆêu‚Åfalse‚É‚È‚é‚±‚Æ‚ğ–h~
+                UpDownSpeed = JumfirstSpeed;//ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Ì’Ç‰ï¿½
+                this.transform.Translate(0, 0.1f, 0);//FlyFlagï¿½ï¿½ï¿½ï¿½uï¿½ï¿½falseï¿½É‚È‚é‚±ï¿½Æ‚ï¿½hï¿½~
                 PlayerAnimation.SetBool("JumpFlag", true);
             }
         }
     }
     void Fly()
     {
-        if (CurrentlyFlyFlag)//‘O‰ñƒtƒŒ[ƒ€‚ªfalse‚È‚ç‚ÎFly‚µ‚Ä‚¢‚é‚Æ‚İ‚È‚·
+        if (CurrentlyFlyFlag)//ï¿½Oï¿½ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½falseï¿½È‚ï¿½ï¿½Flyï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Æ‚İ‚È‚ï¿½
         {
             flyFlag = false;
         }
@@ -266,11 +267,11 @@ public class charactor : MonoBehaviour
         {
             flyFlag = true;
         }
-        
+
         CurrentlyFlyFlag = false;
         if (flyFlag)
         {
-          UpDownSpeed += Gravity * Time.deltaTime;//‰Á‘¬“x‚ğ‘«‚·
+            UpDownSpeed += Gravity * Time.deltaTime;//ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ğ‘«‚ï¿½
         }
         //ActionFlag |= flyFlag;
     }
@@ -282,10 +283,10 @@ public class charactor : MonoBehaviour
     {
         if (Map.gameObject.tag == "Map")
         {
-           JumpFlag = false;//‘«‚ª‚Â‚¢‚Ä‚¢‚é‚Æ‚«‚Ífalse
-           CurrentlyFlyFlag = true;
-           UpDownSpeed = 0;
-           PlayerAnimation.SetBool("JumpFlag", false);
+            JumpFlag = false;//ï¿½ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½false
+            CurrentlyFlyFlag = true;
+            UpDownSpeed = 0;
+            PlayerAnimation.SetBool("JumpFlag", false);
         }
     }
 
@@ -311,8 +312,8 @@ public class charactor : MonoBehaviour
 
     //    if (AttackFlag)
     //    {
-    //        AttackTimePro += Time.deltaTime;//UŒ‚‚µn‚ß‚©‚ç‚ÌŠÔŒo‰ß
-    //        if (AttackTimePro >= AttackTime)//Œo‰ßŠÔ‚ªİ’èŠÔ‚ğ’´‚¦‚½‚çUŒ‚I—¹
+    //        AttackTimePro += Time.deltaTime;//ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½nï¿½ß‚ï¿½ï¿½ï¿½Ìï¿½ï¿½ÔŒoï¿½ï¿½
+    //        if (AttackTimePro >= AttackTime)//ï¿½oï¿½ßï¿½ï¿½Ô‚ï¿½ï¿½İ’èï¿½Ô‚ğ’´‚ï¿½ï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½Iï¿½ï¿½
     //        {
     //            AttackFlag = false;
     //            CollisionFirstFlag = false;
@@ -321,13 +322,13 @@ public class charactor : MonoBehaviour
     //        }
     //    }
 
-    //    if(AttackFlag == true)//UŒ‚ƒ‚[ƒVƒ‡ƒ“’†‚É
+    //    if(AttackFlag == true)//ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     //    {
-    //        if(swordCollision.SwordCollisionFlag == true)//Œ•‚ªUŒ‚‚ª“–‚½‚Á‚½‚ç
+    //        if(swordCollision.SwordCollisionFlag == true)//ï¿½ï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     //        {
-    //            if(CollisionFirstFlag == false)//Å‰‚Ìˆê‰ñ‚¾‚¯
+    //            if(CollisionFirstFlag == false)//ï¿½Åï¿½ï¿½Ìˆï¿½ñ‚¾‚ï¿½
     //            {
-    //                enemyAgent.DamageEnemy(5);//enemyAgent.DamageEnemy(2);//“G‚Ì‘Ì—Í‚ªŒ¸‚éŠÖ”Às
+    //                enemyAgent.DamageEnemy(5);//enemyAgent.DamageEnemy(2);//ï¿½Gï¿½Ì‘Ì—Í‚ï¿½ï¿½ï¿½ï¿½ï¿½Öï¿½ï¿½ï¿½ï¿½s
     //                CollisionFirstFlag = true;
     //            }
     //        }
@@ -336,7 +337,7 @@ public class charactor : MonoBehaviour
     //}
     void ItemChange()
     {
-        if (!attackSctipt.ChargeFlag && !AttackFlag)//UŒ‚AUŒ‚ƒ`ƒƒ[ƒW’†‚Íƒ_ƒ
+        if (!attackSctipt.ChargeFlag && !AttackFlag)//ï¿½Uï¿½ï¿½ï¿½Aï¿½Uï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½Íƒ_ï¿½ï¿½
         {
             if (Input.GetKey(KeyCode.Alpha4))
             {
@@ -357,14 +358,14 @@ public class charactor : MonoBehaviour
         }
 
 
-        if(NowHave == 0)
+        if (NowHave == 0)
         {
             Item[Sword - 1].SetActive(false);
             Item[Reypier - 1].SetActive(false);
             Item[Apple - 1].SetActive(false);
         }
 
-        if(NowHave == Sword && PlayerItem[Sword] == true)
+        if (NowHave == Sword && PlayerItem[Sword] == true)
         {
             Item[Sword - 1].SetActive(true);
             Item[Reypier - 1].SetActive(false);
@@ -418,26 +419,26 @@ public class charactor : MonoBehaviour
                 {
                     BackStepFlag = true;
                     PlayerAnimation.SetBool("BackStep", true);
-                     SP -= StepDe;
+                    SP -= StepDe;
                 }
             }
         }
 
-            if (RightStepFlag)
-            {
-                rb.velocity = transform.right * StepSpeed;
-               
-            }
+        if (RightStepFlag)
+        {
+            rb.velocity = transform.right * StepSpeed;
 
-            if (LeftStepFlag)
-            {
-                rb.velocity = transform.right * (-StepSpeed);
-            }
+        }
 
-            if (BackStepFlag)
-            {
-                rb.velocity = transform.forward * (-StepSpeed);
-            }
+        if (LeftStepFlag)
+        {
+            rb.velocity = transform.right * (-StepSpeed);
+        }
+
+        if (BackStepFlag)
+        {
+            rb.velocity = transform.forward * (-StepSpeed);
+        }
 
 
         if (StepTimer >= 0.8f)
@@ -450,15 +451,15 @@ public class charactor : MonoBehaviour
             PlayerAnimation.SetBool("BackStep", false);
         }
     }
-    void SPma()//SPƒ}ƒlƒWƒƒ“ƒg
+    void SPma()//SPï¿½}ï¿½lï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½g
     {
         SPHealTime += Time.deltaTime;
-        if(RunFlag || StepFlag)
+        if (RunFlag || StepFlag)
         {
             SPHealTime = 0;
         }
 
-        if(SPHealTime >= 1.5f)
+        if (SPHealTime >= 1.5f)
         {
             SP += Time.deltaTime * SPIn;
         }
